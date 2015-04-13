@@ -1,0 +1,157 @@
+{
+  "data": {
+    "id":123,
+    "name": "综艺节目",
+    "liveChannel": 1,
+    "providerID": "iAction",
+    "assetID": "iAct12345678901234567890",
+    "startTime": "2015-01-06T09:09Z",
+    "segmentInterval": "6",
+    "segmentInPlaylist": "3",
+    "outputFormat": "HLS",
+    "tstvEnable": "1",
+    "cameras": [
+      {
+        "name": "PGM",
+        "videos": [
+          {
+            "bitrate": "200",
+            "protocol": "UDP://",
+            "ipAddress": "255.255.255.255",
+            "port": "1001",
+            "format": "ts",
+            "mediaType": "VIDEO",
+            "associatedMasterPlaylist": [
+              "Main",
+              "Phone"
+            ],
+            "groupId": "video200"
+          },
+          {
+            "bitrate": "400",
+            "protocol": "UDP://",
+            "ipAddress": "255.255.255.255",
+            "port": "1002",
+            "format": "ts",
+            "mediaType": "VIDEO",
+            "associatedMasterPlaylist": [
+              "Main",
+              "Phone",
+              "Pad"
+            ],
+            "groupId": "video400"
+          }
+        ]
+      },
+      {
+        "name": "cam1",
+        "videos": [
+          {
+            "bitrate": "200",
+            "protocol": "UDP://",
+            "ipAddress": "255.255.255.255",
+            "port": "1001",
+            "format": "ts",
+            "mediaType": "VIDEO",
+            "associatedMasterPlaylist": [
+              "Main",
+              "Phone",
+              "Pad",
+              "PC"
+            ],
+            "groupId": "video200"
+          }
+        ]
+      }
+    ],
+    "audios": [
+      {
+        "bitrate": "64",
+        "protocol": "UDP://",
+        "ipAddress": "255.255.255.255",
+        "port": "1001",
+        "format": "ts",
+        "mediaType": "AUDIO",
+        "language": "en",
+        "displayName": "English",
+        "defaultLanguage": "no",
+        "autoSelect": "no",
+        "groupId": "audio64"
+      },
+      {
+        "bitrate": "64",
+        "protocol": "UDP://",
+        "ipAddress": "255.255.255.255",
+        "port": "1001",
+        "format": "ts",
+        "mediaType": "AUDIO",
+        "language": "zh",
+        "displayName": "普通话",
+        "defaultLanguage": "yes",
+        "autoSelect": "yes",
+        "groupId": "audio64"
+      },
+      {
+        "bitrate": "128",
+        "protocol": "UDP://",
+        "ipAddress": "255.255.255.255",
+        "port": "1001",
+        "format": "ts",
+        "mediaType": "AUDIO",
+        "language": "yue",
+        "displayName": "广东话",
+        "defaultLanguage": "no",
+        "autoSelect": "yes",
+        "groupId": "audio128"
+      }
+    ],
+    "subtitles": [
+      {
+        "bitrate": "64",
+        "protocol": "UDP://",
+        "ipAddress": "255.255.255.255",
+        "port": "1001",
+        "format": "vtt",
+        "mediaType": "SUBTITLE",
+        "segmentDuration": "20",
+        "language": "en",
+        "displayName": "English",
+        "defaultLanguage": "no",
+        "autoSelect": "no",
+        "groupId": "subtitle64"
+      },
+      {
+        "bitrate": "64",
+        "protocol": "UDP://",
+        "ipAddress": "255.255.255.255",
+        "port": "1001",
+        "format": "vtt",
+        "mediaType": "SUBTITLE",
+        "segmentDuration": "20",
+        "language": "zh",
+        "displayName": "普通话",
+        "defaultLanguage": "yes",
+        "autoSelect": "yes",
+        "groupId": "subtitle64"
+      }
+    ],
+    "manifests": [
+      {
+        "name": "Main",
+        "content": "Main.m3u8"
+      },
+      {
+        "name": "Phone",
+        "content": "Phone.m3u8"
+      },
+      {
+        "name": "Pad",
+        "content": "Pad.m3u8"
+      },
+      {
+        "name": "PC",
+        "content": "PC.m3u8"
+      }
+    ]
+  }
+}

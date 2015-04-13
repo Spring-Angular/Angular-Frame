@@ -1,0 +1,150 @@
+{
+  "data": {
+    "totalRecord": "602",
+    "channels": [
+      {
+        "id": 123,
+        "name": "ntv-1",
+        "providerId": "iaction",
+        "assetID": "iact1234567890123456",
+        "format": "HLS",
+        "tstvEnable": "1",
+        "multiAgle": "1",
+        "startTime": "2015-01-06T09:09Z",
+        "status": "started"
+      },
+      {
+        "id": 456,
+        "name": "ntv-2",
+        "providerId": "cctv",
+        "assetID": "cctv1234567890123456",
+        "format": "HLS",
+        "tstvEnable": "0",
+        "multiAgle": "0",
+        "startTime": "2015-01-06T09:09Z",
+        "status": "stoped"
+      },
+      {
+        "id": 456,
+        "name": "ntv-3",
+        "providerId": "cctv",
+        "assetID": "cctv1234567890123456",
+        "format": "HLS",
+        "tstvEnable": "0",
+        "multiAgle": "0",
+        "startTime": "2015-01-06T09:09Z",
+        "status": "scheduled"
+      },
+      {
+        "id": 456,
+        "name": "ntv-3",
+        "providerId": "cctv",
+        "assetID": "cctv1234567890123456",
+        "format": "HLS",
+        "tstvEnable": "0",
+        "multiAgle": "0",
+        "startTime": "2015-01-06T09:09Z",
+        "status": "scheduled"
+      },
+      {
+        "id": 456,
+        "name": "ntv-3",
+        "providerId": "cctv",
+        "assetID": "cctv1234567890123456",
+        "format": "HLS",
+        "tstvEnable": "0",
+        "multiAgle": "0",
+        "startTime": "2015-01-06T09:09Z",
+        "status": "scheduled"
+      },
+      {
+        "id": 456,
+        "name": "ntv-3",
+        "providerId": "cctv",
+        "assetID": "cctv1234567890123456",
+        "format": "HLS",
+        "tstvEnable": "0",
+        "multiAgle": "0",
+        "startTime": "2015-01-06T09:09Z",
+        "status": "scheduled"
+      },
+      {
+        "id": 456,
+        "name": "ntv-3",
+        "providerId": "cctv",
+        "assetID": "cctv1234567890123456",
+        "format": "HLS",
+        "tstvEnable": "0",
+        "multiAgle": "0",
+        "startTime": "2015-01-06T09:09Z",
+        "status": "scheduled"
+      },
+      {
+        "id": 456,
+        "name": "ntv-3",
+        "providerId": "cctv",
+        "assetID": "cctv1234567890123456",
+        "format": "HLS",
+        "tstvEnable": "0",
+        "multiAgle": "0",
+        "startTime": "2015-01-06T09:09Z",
+        "status": "scheduled"
+      },
+      {
+        "id": 456,
+        "name": "ntv-3",
+        "providerId": "cctv",
+        "assetID": "cctv1234567890123456",
+        "format": "HLS",
+        "tstvEnable": "0",
+        "multiAgle": "0",
+        "startTime": "2015-01-06T09:09Z",
+        "status": "scheduled"
+      },
+      {
+        "id": 456,
+        "name": "ntv-3",
+        "providerId": "cctv",
+        "assetID": "cctv1234567890123456",
+        "format": "HLS",
+        "tstvEnable": "0",
+        "multiAgle": "0",
+        "startTime": "2015-01-06T09:09Z",
+        "status": "scheduled"
+      },
+      {
+        "id": 456,
+        "name": "ntv-3",
+        "providerId": "cctv",
+        "assetID": "cctv1234567890123456",
+        "format": "HLS",
+        "tstvEnable": "0",
+        "multiAgle": "0",
+        "startTime": "2015-01-06T09:09Z",
+        "status": "scheduled"
+      },
+      {
+        "id": 456,
+        "name": "ntv-3",
+        "providerId": "cctv",
+        "assetID": "cctv1234567890123456",
+        "format": "HLS",
+        "tstvEnable": "0",
+        "multiAgle": "0",
+        "startTime": "2015-01-06T09:09Z",
+        "status": "scheduled"
+      },
+      {
+        "id": 456,
+        "name": "ntv-3",
+        "providerId": "cctv",
+        "assetID": "cctv1234567890123456",
+        "format": "HLS",
+        "tstvEnable": "0",
+        "multiAgle": "0",
+        "startTime": "2015-01-06T09:09Z",
+        "status": "scheduled"
+      }
+    ]
+  }
+}
