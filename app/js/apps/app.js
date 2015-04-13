@@ -11,7 +11,8 @@ var rmsApp = angular.module('vasApp', [
     'commonFilter'
 
 ]);
-
+/*
+* testing*/
 
 rmsApp.run(function ($rootScope, $templateCache) {
     $rootScope.$on('$viewContentLoaded', function () {
