@@ -250,45 +250,38 @@ commonDirective.directive("refreshMultipleSelect", function () {
 /*
  * Form Validate
  * */
-commonDirective.directive("formValidate", function ($timeout) {
-    return {
-        restrict: 'EAC',
-        require: 'ngModel',
-        scope: {
-            'validData': '=',
-            'validType': '@'
+
+/*
+ *  input Reg Exp, check match Reg Exp or not (for form)
+ *
+ * example:
+ * <input name ="num" ng-model="numa" common-validate  valid-r-e="[0-9]"/>
+ * <form name="form">
+ *   <div ng-hide="form.num.$error.commonValidate">error</div>
+ * </form>
+ * */
+
+commonDirective.directive('commonValidate',function(){
+    return{
+        restrict:'EAC',
+        require:'ngModel',
+        scope:{
+            validRE:'@'
         },
-        link: function (scope, elm, attrs) {
-            var touch = false;
-            var validAttr = attrs.name;
-            elm.on('keyup', function () {
-                $timeout(function () {
-                    if (scope.validType.indexOf('require') >= 0) {
-                        console.log(scope.validData);
-                        if (typeof(scope.validData) === 'undefined' || scope.validData === '') {
-                            elm.parent().next().html('');
-                            elm.parent().next().append('<div class="errorTips"><span class="badge badge-danger" style="margin-top: 5px;"> <i class="fa fa-times"></i> </span> &nbsp; <span><strong>Error! </strong>' + validAttr + ' is required</span> </div>');
-                        } else {
-                            elm.parent().next().html('');
-                            elm.parent().next().append('<div class="successTips"> <span class="badge badge-success" style="margin-top: 5px;"> <i class="fa fa-check"></i> </span> </div>');
-
-
-                        }
-                    } else if (scope.validType.indexOf('ip') >= 0) {
-                        console.log(scope.validData);
-                        var reg = /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
-                        if (reg.test(scope.validData)) {
-                            elm.parent().next().html('');
-                            elm.parent().next().append('<div class="successTips"> <span class="badge badge-success" style="margin-top: 5px;"> <i class="fa fa-check"></i> </span> </div>');
-                        } else {
-                            elm.parent().next().html('');
-                            elm.parent().next().append('<div class="errorTips"><span class="badge badge-danger" style="margin-top: 5px;"> <i class="fa fa-times"></i> </span> &nbsp; <span><strong>Error! </strong>' + validAttr + ' is illegal</span> </div>');
-                        }
-                    }
-                }, 500);
-            });
+        link:function(scope, elm, attrs,ctrl){
+            ctrl.$validators.commonValidate = function(modelValue,viewValue){
+                var reg = new RegExp(scope.validRE);
+                if(ctrl.$isEmpty(modelValue)){
+                    return true;
+                }
+                else if(reg.test(viewValue)){
+                    return true;
+                }
+                return false;
+            };
 
         }
+
     };
 });
 
