@@ -98,10 +98,42 @@ commonService.factory('validateService',function(){
                 'errMsg':''
             };
             switch(choice){
-                case "test":
-                    console.log("test");
-                    result.reg = new RegExp("[0-3]");
+                case 'test':
+                    result.reg =/[0-3]/;
                     result.errMsg = 'test';
+                    break;
+                case 'url':
+                    result.reg = /^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/;
+                    result.errMsg = 'url input is illegal ';
+                    break;
+                case 'email':
+                    result.reg =/^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9-]+(\.[a-z0-9-]+)*$/i;
+                    result.errMsg = 'email input is illegal';
+                    break;
+                case 'number':
+                    var reg =/^\s*(\-|\+)?(\d+|(\d*(\.\d*)))\s*$/;
+                    result.reg = reg;
+                    result.errMsg = 'num input is illegal';
+                    break;
+                case 'date':
+                    result.reg = /^(\d{4})-(\d{2})-(\d{2})$/;
+                    result.errMsg = 'date input is illegal';
+                    break;
+                case 'datetime':
+                    result.reg = /^(\d{4})-(\d\d)-(\d\d)T(\d\d):(\d\d)$/;
+                    result.errMsg = 'datetime input is illegal';
+                    break;
+                case 'week':
+                    result.reg=/^(\d{4})-W(\d\d)$/;
+                    result.errMsg = 'week input is illegal';
+                    break;
+                case 'month':
+                    result.reg =/^(\d{4})-(\d\d)$/;
+                    result.errMsg = 'month input is illegal';
+                    break;
+                case 'time':
+                    result.reg = /^(\d\d):(\d\d)$/;
+                    result.errMsg = 'time input is illegal';
                     break;
             }
             return result;
