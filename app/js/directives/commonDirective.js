@@ -252,7 +252,7 @@ commonDirective.directive("refreshMultipleSelect", function () {
  * */
 
 /*
- *  input Reg Exp, check match Reg Exp or not (for form)
+ *  input Reg Exp or intput validate type(which in commonService->validateService), check match Reg Exp or not (for form)
  *
  * example:
  * <input name ="num" ng-model="numa" common-validate  valid-r-e="[0-9]"/>
@@ -261,27 +261,41 @@ commonDirective.directive("refreshMultipleSelect", function () {
  * </form>
  * */
 
-commonDirective.directive('commonValidate',function(){
-    return{
-        restrict:'EAC',
-        require:'ngModel',
-        scope:{
-            validRE:'@'
+commonDirective.directive('commonValidate', function (validateService) {
+    return {
+        restrict: 'EAC',
+        require: 'ngModel',
+        scope: {
+            validRE: '@',
+            validErrMsg: '@',
+            validType: '@'
         },
-        link:function(scope, elm, attrs,ctrl){
-            ctrl.$validators.commonValidate = function(modelValue,viewValue){
-                var reg = new RegExp(scope.validRE);
-                if(ctrl.$isEmpty(modelValue)){
+        link: function (scope, elm, attrs, ctrl) {
+            var validGroup = [];
+            if ((scope.validRE !== undefined) && (scope.validErrMsg !== undefined)) {
+                validGroup.push({'reg': new RegExp(scope.validRE), 'errMsg': scope.validErrMsg});
+            }
+            if ((scope.validType !== undefined)) {
+                var typeArray = scope.validType.split(' ');
+                for (var num in typeArray) {
+                    validGroup.push(validateService.choice(typeArray[num]));
+                }
+            }
+            ctrl.$validators.commonValidate = function (modelValue, viewValue) {
+                if (ctrl.$isEmpty(modelValue)) {
                     return true;
                 }
-                else if(reg.test(viewValue)){
+                else {
+                    for (var num in validGroup) {
+                        console.log(validGroup[num].reg);
+                        if (!(validGroup[num].reg.test(viewValue))) {
+                            return false;
+                        }
+                    }
                     return true;
                 }
-                return false;
             };
-
         }
-
     };
 });
 

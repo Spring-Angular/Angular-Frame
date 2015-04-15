@@ -83,6 +83,31 @@ commonService.factory('toolService', function ($window,$timeout) {
     }
 });
 
+/*
+ * support basic formValidate reg to commonDirecitve -> commonValidate
+ *
+ * example to see commonValidate annotation
+ *
+ * you also can add your own reg in this service just like "test".
+ * */
+commonService.factory('validateService',function(){
+    return {
+        'choice':function(choice){
+            var result={
+                'reg':'',
+                'errMsg':''
+            };
+            switch(choice){
+                case "test":
+                    console.log("test");
+                    result.reg = new RegExp("[0-3]");
+                    result.errMsg = 'test';
+                    break;
+            }
+            return result;
+        }
+    }
+});
 commonService.factory('testService', function ($window) {
     return {
         'test': function () {
